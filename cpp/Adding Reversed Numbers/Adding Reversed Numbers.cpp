@@ -2,15 +2,15 @@
 //  Adding Reversed Numbers.cpp
 //  laboratory
 //
-//  Created by Ğì×ÓÉº on 16/2/27.
-//  Copyright (c) 2016Äê xu_zishan. All rights reserved.
+//  Created by å¾å­çŠ on 16/2/27.
+//  Copyright (c) 2016å¹´ xu_zishan. All rights reserved.
 //
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
 using namespace std;
-int reverseNumber(int x){//ÕûÊı·´×ª
+int reverseNumber(int x){//æ•´æ•°åè½¬
 	int a=0;
 	while(x!=0){
 		a=10*a+(x%10);
