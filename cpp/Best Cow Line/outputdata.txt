@@ -1,0 +1,2 @@
+ABCBCD
+AABBCC

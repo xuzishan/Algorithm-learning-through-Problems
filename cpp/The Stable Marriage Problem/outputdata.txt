@@ -1,0 +1,18 @@
+a A
+b B
+c C
+
+a B
+b A
+c C
+
+a A
+b B
+c C
+d D
+
+a D
+b A
+c C
+d B
+

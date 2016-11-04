@@ -1,0 +1,6 @@
+INFIX    => a + b - c
+PREFIX   => + a - b c
+POSTFIX  => a b c - + 
+INFIX    => a + b + c + d * e
+PREFIX   => + + a b + c * d e
+POSTFIX  => a b + c d e * + + 

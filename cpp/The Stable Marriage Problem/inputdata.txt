@@ -1,0 +1,37 @@
+4
+3
+a b c A B C
+a:BAC
+b:BAC
+c:ACB
+A:acb
+B:bac
+C:cab
+3
+a b c A B C
+a:ABC
+b:ABC
+c:BCA
+A:bac
+B:acb
+C:abc
+4
+a b c d A B C D
+a:ABCD
+b:BADC
+c:CDAB
+d:DCBA
+A:dcba
+B:cdab
+C:badc
+D:abcd
+4
+a b c d A B C D
+a:ADCB
+b:BADC
+c:CDAB
+d:BCDA
+A:dcba
+B:cdab
+C:badc
+D:abcd

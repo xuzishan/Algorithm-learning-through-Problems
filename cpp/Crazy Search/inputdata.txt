@@ -1,0 +1,13 @@
+3 4
+daababac
+4 5
+fsafdasfdafdsafdafdsafdsafadfaggggggg
+5 2
+asasasaasasasa
+5 4
+aaaaaaaaaaaaaaaaaaaa
+2 2
+a
+3 1
+aaaaaaaaaaaaaaaaaaaaaaaa
+0 0

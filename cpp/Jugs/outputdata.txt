@@ -1,0 +1,25 @@
+fill A
+puor A B
+fill A
+puor A B
+empty B
+puor A B
+fill A
+puor A B
+success
+fill A
+puor A B
+fill A
+puor A B
+empty B
+puor A B
+success
+fill B
+puor B A
+empty A
+puor B A
+empty A
+puor B A
+fill B
+puor B A
+success
