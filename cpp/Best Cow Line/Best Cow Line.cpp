@@ -1,4 +1,4 @@
-﻿//
+//
 //  Best Cow Line.cpp
 //  laboratory
 //

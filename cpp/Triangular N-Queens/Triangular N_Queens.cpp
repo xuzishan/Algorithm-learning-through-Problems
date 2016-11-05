@@ -2,8 +2,8 @@
 //  Triangular N_Queens.cpp
 //  laboratory
 //
-//  Created by Ğì×ÓÉº on 15/4/15.
-//  Copyright (c) 2015Äê xu_zishan. All rights reserved.
+//  Created by å¾å­çŠ on 15/4/15.
+//  Copyright (c) 2015å¹´ xu_zishan. All rights reserved.
 //
 #include <fstream>
 #include <iostream>
@@ -13,18 +13,18 @@
 using namespace std;
 class Chessboard{
     vector<int> x;
-    int first_col;//µÚÒ»ÅÅ»ÊºóÄ©Î²Î»ÖÃµÄÁĞºÅ
-    int seconde_row;//µÚ¶şÅÅ»ÊºóÊ×¸öÎ»ÖÃĞĞºÅ
-    int seconde_col;//µÚ¶şÅÅ»ÊºóÄ©Î²Î»ÖÃÁĞºÅ
-    int n;//ÆåÅÌ¹æÄ£
+    int first_col;//ç¬¬ä¸€æ’çš‡åæœ«å°¾ä½ç½®çš„åˆ—å·
+    int seconde_row;//ç¬¬äºŒæ’çš‡åé¦–ä¸ªä½ç½®è¡Œå·
+    int seconde_col;//ç¬¬äºŒæ’çš‡åæœ«å°¾ä½ç½®åˆ—å·
+    int n;//æ£‹ç›˜è§„æ¨¡
     int k;
 public:
     Chessboard();
-    void triangularNQueens(int N);//´Ó¹æÄ£kÀ©Õ¹ÆåÅÌµ½¹æÄ£N
+    void triangularNQueens(int N);//ä»è§„æ¨¡kæ‰©å±•æ£‹ç›˜åˆ°è§„æ¨¡N
     string toString(int i, int N);
 };
 Chessboard::Chessboard(){
-	x.push_back(0), x.push_back(-1), x.push_back(1);//³õÊ¼Èı½ÇĞÎ
+	x.push_back(0), x.push_back(-1), x.push_back(1);//åˆå§‹ä¸‰è§’å½¢
     first_col=0;
     seconde_row=2;
     seconde_col=1;
@@ -32,27 +32,27 @@ Chessboard::Chessboard(){
     n=3;
 }
 void Chessboard::triangularNQueens(int N){
-    n = N>n ? N : n;//ĞŞÕıÆåÅÌ¹æÄ£
-    while(k<n){//Öğ²ãÀ©Õ¹Èı½ÇĞÎ
+    n = N>n ? N : n;//ä¿®æ­£æ£‹ç›˜è§„æ¨¡
+    while(k<n){//é€å±‚æ‰©å±•ä¸‰è§’å½¢
         switch (k%3) {
-            case 0: //À©Õ¹ÓÒÑü
+            case 0: //æ‰©å±•å³è…°
 				x.insert(x.begin(), 1, -1);
                 seconde_row++;
                 first_col+=2;
                 x[first_col]=first_col;
-	 	        break;//µÚÒ»ÅÅ»Êºó×·¼ÓÒ»¸ö
-            case 1: //À©Õ¹µ×±ß
-                x.insert(x.begin()+seconde_row, 1, -1);//µÚ¶şÅÅ»ÊºóÏÂ³ÁÒ»ĞĞ
+	 	        break;//ç¬¬ä¸€æ’çš‡åè¿½åŠ ä¸€ä¸ª
+            case 1: //æ‰©å±•åº•è¾¹
+                x.insert(x.begin()+seconde_row, 1, -1);//ç¬¬äºŒæ’çš‡åä¸‹æ²‰ä¸€è¡Œ
                 seconde_row++;
 				break;
-            default: //À©Õ¹µ×±ß
-                seconde_col+=2;//µÚ¶şÅÅ»Êºó×·¼ÓÒ»¸ö
+            default: //æ‰©å±•åº•è¾¹
+                seconde_col+=2;//ç¬¬äºŒæ’çš‡åè¿½åŠ ä¸€ä¸ª
                 x.push_back(seconde_col);
             }
         k++;
     }
 }
-string Chessboard::toString(int i, int N){//·µ»ØµÚi¸ö°¸Àı¸ñ¾Ö
+string Chessboard::toString(int i, int N){//è¿”å›ç¬¬iä¸ªæ¡ˆä¾‹æ ¼å±€
 	ostringstream s; 
     s<<(i+1)<<" "<<N<<" "<<((2*N+1)/3)<<endl;
     int count=0;

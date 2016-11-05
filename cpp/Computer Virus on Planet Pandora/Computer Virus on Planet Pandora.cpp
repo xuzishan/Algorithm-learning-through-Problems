@@ -1,4 +1,4 @@
-﻿//
+//
 //  Computer Virus on Planet Pandora.cpp
 //  laboratory
 //

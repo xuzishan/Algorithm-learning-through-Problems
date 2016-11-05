@@ -1,4 +1,4 @@
-﻿//
+//
 //  Color the map.cpp
 //  laboratory
 //

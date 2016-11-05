@@ -2,8 +2,8 @@
 //  The Embarrassed Cryptographer.cpp
 //  Algorithms
 //
-//  Created by Ğì×ÓÉº on 16-4-20.
-//  Copyright (c) 2016Äê Ğì×ÓÉº. All rights reserved.
+//  Created by å¾å­çŠ on 16-4-20.
+//  Copyright (c) 2016å¹´ å¾å­çŠ. All rights reserved.
 //
 
 #include <fstream>

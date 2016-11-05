@@ -2,8 +2,8 @@
 //  FindtheWinningMove.cpp
 //  Algorithms
 //
-//  Created by Ğì×ÓÉº on 13-7-7.
-//  Copyright (c) 2013Äê Ğì×ÓÉº. All rights reserved.
+//  Created by å¾å­çŠ on 13-7-7.
+//  Copyright (c) 2013å¹´ å¾å­çŠ. All rights reserved.
 //
 #include <fstream>
 #include <string>
@@ -12,46 +12,46 @@
 #include <iostream>
 using namespace std;
 //class TicTacToe;
-//bool checkrow(int i, int targ){//¼ì²âtargËùÊ¾¸ñ¾ÖÊÇ·ñÔÚµÚiĞĞÓ®
+//bool checkrow(int i, int targ){//æ£€æµ‹targæ‰€ç¤ºæ ¼å±€æ˜¯å¦åœ¨ç¬¬iè¡Œèµ¢
 //    int v=15<<(i*4);
 //    return v==(targ&v);
 //}
-//bool checkcol(int j, int targ){//¼ì²âtargËùÊ¾¸ñ¾ÖÊÇ·ñÔÚµÚjÁĞÓ®
+//bool checkcol(int j, int targ){//æ£€æµ‹targæ‰€ç¤ºæ ¼å±€æ˜¯å¦åœ¨ç¬¬jåˆ—èµ¢
 //    int v=4369<<j;
 //	return v==(targ&v);
 //}
-//bool checkdiag(int targ){//¼ì²âtargËùÊ¾¸ñ¾ÖÊÇ·ñÔÚÖ÷¶Ô½ÇÏßÓ®
+//bool checkdiag(int targ){//æ£€æµ‹targæ‰€ç¤ºæ ¼å±€æ˜¯å¦åœ¨ä¸»å¯¹è§’çº¿èµ¢
 //    int v=33825;
 //    return v==(targ&v);
 //}
-//bool checkdiag1(int targ){//¼ì²âtargËùÊ¾¸ñ¾ÖÊÇ·ñÔÚ´Î¶Ô½ÇÏßÓ®
+//bool checkdiag1(int targ){//æ£€æµ‹targæ‰€ç¤ºæ ¼å±€æ˜¯å¦åœ¨æ¬¡å¯¹è§’çº¿èµ¢
 //    int v=4680;
 //    return v==(targ&v);
 //}
-//class Player{//Íæ¼ÒÀà
-//    bool win;//Ó®±êÖ¾
-//    int pattern;//×Ô¼Ò¸ñ¾Ö
-//    int initp;//×Ô¼Ò³õÊ¼¸ñ¾Ö
+//class Player{//ç©å®¶ç±»
+//    bool win;//èµ¢æ ‡å¿—
+//    int pattern;//è‡ªå®¶æ ¼å±€
+//    int initp;//è‡ªå®¶åˆå§‹æ ¼å±€
 //public:
 //    Player(int p=0):win(false),initp(p),pattern(p){}
-//    void place(int i, int j);//ÔÚµÚiĞĞµÚjÁĞ´¦ÏÂ×Ó
-//    void clear(int i, int j);//Çå³ıµÚiĞĞµÚjÁĞ´¦Æå×Ó
-//    void reset();//ÓÃ×Ô¼Ò³õÊ¼¸ñ¾ÖÖØÖÃ
-//    void reset(int p);//ÓÃ¸ñ¾Ö²ÎÊıÖØÖÃ
-//    bool isWin(){return win;}//¼ì²âÓ®±êÖ¾
-//    friend void explore(TicTacToe &game, int k);//Ì½Ë÷Ò»¾ÖÆå
+//    void place(int i, int j);//åœ¨ç¬¬iè¡Œç¬¬jåˆ—å¤„ä¸‹å­
+//    void clear(int i, int j);//æ¸…é™¤ç¬¬iè¡Œç¬¬jåˆ—å¤„æ£‹å­
+//    void reset();//ç”¨è‡ªå®¶åˆå§‹æ ¼å±€é‡ç½®
+//    void reset(int p);//ç”¨æ ¼å±€å‚æ•°é‡ç½®
+//    bool isWin(){return win;}//æ£€æµ‹èµ¢æ ‡å¿—
+//    friend void explore(TicTacToe &game, int k);//æ¢ç´¢ä¸€å±€æ£‹
 //};
 //void Player::place(int i, int j){
 //    int v=1;
 //    v=v<<(i*4+j);
-//    pattern=pattern|v;//ÉèÖÃ¸ñ¾Ö¶ÔÓ¦Î»Îª1
+//    pattern=pattern|v;//è®¾ç½®æ ¼å±€å¯¹åº”ä½ä¸º1
 //    win=checkrow(i, pattern)||checkcol(j, pattern)||checkdiag(pattern)||checkdiag1(pattern);
 //}
 //void Player::clear(int i, int j){
 //    int v=1;
 //    v=v<<(i*4+j);
-//    v=~v;//È¡·´
-//    pattern=pattern&v;//Çå³ı¸ñ¾Ö¶ÔÓ¦Î»ÉÏµÄ1
+//    v=~v;//å–å
+//    pattern=pattern&v;//æ¸…é™¤æ ¼å±€å¯¹åº”ä½ä¸Šçš„1
 //}
 //void Player::reset(){
 //    pattern=initp;
@@ -61,25 +61,25 @@ using namespace std;
 //    pattern=initp=p;
 //    win=false;
 //}
-//bool checkdiag1(bitset<16> &targ){//¼ì²âtargËùÊ¾¸ñ¾ÖÊÇ·ñÔÚ´Î¶Ô½ÇÏßÓ®
+//bool checkdiag1(bitset<16> &targ){//æ£€æµ‹targæ‰€ç¤ºæ ¼å±€æ˜¯å¦åœ¨æ¬¡å¯¹è§’çº¿èµ¢
 //    bitset<16> v=4680;
 //    return v==(targ&v);
 //}
-//class TicTacToe {//Ò»×ÖÆåÀà
-//    Player x, o;//Á½¸öÍæ¼Ò
-//    vector<pair<int, int> > hole;//ÆåÅÌÖĞ¿ÉÏÂ×ÓµÄÆåÑÛ
-//    int p[16];//ÏÂ×ÓË³Ğò
-//    int n;//¿ÉÏÂ×ÓÊıÄ¿
-//    bool draw;//Æ½¾Ö±êÖ¾
-//    bool forceWin;//x±ØÓ®±êÖ¾
+//class TicTacToe {//ä¸€å­—æ£‹ç±»
+//    Player x, o;//ä¸¤ä¸ªç©å®¶
+//    vector<pair<int, int> > hole;//æ£‹ç›˜ä¸­å¯ä¸‹å­çš„æ£‹çœ¼
+//    int p[16];//ä¸‹å­é¡ºåº
+//    int n;//å¯ä¸‹å­æ•°ç›®
+//    bool draw;//å¹³å±€æ ‡å¿—
+//    bool forceWin;//xå¿…èµ¢æ ‡å¿—
 //public:
-//    pair<int, int> winMove;//±ØÓ®Ê×²½
-//    TicTacToe(string a[4]);//¹¹Ôìº¯Êı
-//    void oneTurn(int k);//µÚkÂÖ
-//    void restore(int k);//»ØËİÇ°»Ö¸´¸ñ¾Ö
-//    void reset();//ÖØÖÃ
-//    bool xIsWin(){return forceWin;}//¼ì²âx±ØÓ®±êÖ¾
-//    friend void findWinningMove(TicTacToe &game);//»ØËİËÑË÷±ØÓ®Ê×²½
+//    pair<int, int> winMove;//å¿…èµ¢é¦–æ­¥
+//    TicTacToe(string a[4]);//æ„é€ å‡½æ•°
+//    void oneTurn(int k);//ç¬¬kè½®
+//    void restore(int k);//å›æº¯å‰æ¢å¤æ ¼å±€
+//    void reset();//é‡ç½®
+//    bool xIsWin(){return forceWin;}//æ£€æµ‹xå¿…èµ¢æ ‡å¿—
+//    friend void findWinningMove(TicTacToe &game);//å›æº¯æœç´¢å¿…èµ¢é¦–æ­¥
 //    friend void explore(TicTacToe &game, int k);
 //};
 //TicTacToe::TicTacToe(string a[4]){
@@ -87,31 +87,31 @@ using namespace std;
 //    n=0;
 //    for(int i=0,t=0;i<4;i++)
 //        for(int j=0;j<4;j++){
-//            if(a[i][j]=='.'){//¼ÇÂ¼¿ÉÏÂ×ÓÆåÑÛ
+//            if(a[i][j]=='.'){//è®°å½•å¯ä¸‹å­æ£‹çœ¼
 //                hole.push_back(make_pair(i,j));
 //                p[t++]=n++;
 //                continue;
 //            }
 //            int k=i*4+j,v=1;
 //            v=v<<k;
-//            if(a[i][j]=='x')//¸ú×Ùx³õÊ¼¸ñ¾Ö
+//            if(a[i][j]=='x')//è·Ÿè¸ªxåˆå§‹æ ¼å±€
 //                xinit=xinit|v;
-//            else//¸ú×Ùo³õÊ¼¸ñ¾Ö
+//            else//è·Ÿè¸ªoåˆå§‹æ ¼å±€
 //                oinit=oinit|v;
 //        }
-//    x.reset(xinit);//³õÊ¼»¯xÍæ¼Ò
-//    o.reset(oinit);//³õÊ¼»¯oÍæ¼Ò
-//    forceWin=draw=false;//³õÊ¼»¯¸÷±êÖ¾
-//    winMove=hole[p[0]];//³õÊ¼»¯±ØÓ®Ê×²½
+//    x.reset(xinit);//åˆå§‹åŒ–xç©å®¶
+//    o.reset(oinit);//åˆå§‹åŒ–oç©å®¶
+//    forceWin=draw=false;//åˆå§‹åŒ–å„æ ‡å¿—
+//    winMove=hole[p[0]];//åˆå§‹åŒ–å¿…èµ¢é¦–æ­¥
 //}
-//void TicTacToe::oneTurn(int k){//µÚkÂÖ
+//void TicTacToe::oneTurn(int k){//ç¬¬kè½®
 //    int i=hole[p[k]].first,j=hole[p[k]].second;
-//    if (k%2==0)//ÂÖµ½xÍæ¼Ò
+//    if (k%2==0)//è½®åˆ°xç©å®¶
 //        x.place(i, j);
-//    else//ÂÖµ½oÍæ¼Ò
+//    else//è½®åˆ°oç©å®¶
 //        o.place(i, j);
 //}
-//void TicTacToe::restore(int k){//»Ö¸´µÚkÂÖÇ°¸ñ¾Ö
+//void TicTacToe::restore(int k){//æ¢å¤ç¬¬kè½®å‰æ ¼å±€
 //    int i=hole[p[k]].first,j=hole[p[k]].second;
 //    if (k%2==0)
 //        x.clear(i, j);
@@ -127,76 +127,76 @@ using namespace std;
 //}
 //void explore(TicTacToe &game, int k){
 //    int n=game.n;
-//    if (game.o.isWin()){//ÉÏÒ»²½oÍæ¼ÒÓ®£¬ÍË³ö
+//    if (game.o.isWin()){//ä¸Šä¸€æ­¥oç©å®¶èµ¢ï¼Œé€€å‡º
 //        return;
 //    }
-//    if(game.x.isWin()){//ÉÏÒ»²½xÍæ¼ÒÓ®£¬×¼±¸xµÄÁíÒ»ÖÖ×ß·¨
+//    if(game.x.isWin()){//ä¸Šä¸€æ­¥xç©å®¶èµ¢ï¼Œå‡†å¤‡xçš„å¦ä¸€ç§èµ°æ³•
 //        game.x.win=false;
 //        return;
 //    }
-//    if((k>=n)&&!game.x.isWin()&&!game.o.isWin()){//³öÏÖÆ½¾Ö
+//    if((k>=n)&&!game.x.isWin()&&!game.o.isWin()){//å‡ºç°å¹³å±€
 //        game.draw=true;
 //        return;
 //    }
-//    for(int i=k;i<n;i++){//ÉÏÒ»²½Î´ÄÜ¾ö³öÊ¤¸º£¬×¼±¸½øÒ»²½Ì½Ë÷£¬¹²ÓĞn-k¸ö¿ÉÄÜµÄ×ß·¨
-//        swap(game.p[k],game.p[i]);//¾ö¶¨ÏÂ×ÓµÄÆåÑÛ
-//        game.oneTurn(k);//×ßÒ»²½
-//        explore(game, k+1);//Ì½Ë÷ÏÂÒ»²½
-//        game.restore(k);//»ØËİÇ°»Ö¸´¸ñ¾Ö
+//    for(int i=k;i<n;i++){//ä¸Šä¸€æ­¥æœªèƒ½å†³å‡ºèƒœè´Ÿï¼Œå‡†å¤‡è¿›ä¸€æ­¥æ¢ç´¢ï¼Œå…±æœ‰n-kä¸ªå¯èƒ½çš„èµ°æ³•
+//        swap(game.p[k],game.p[i]);//å†³å®šä¸‹å­çš„æ£‹çœ¼
+//        game.oneTurn(k);//èµ°ä¸€æ­¥
+//        explore(game, k+1);//æ¢ç´¢ä¸‹ä¸€æ­¥
+//        game.restore(k);//å›æº¯å‰æ¢å¤æ ¼å±€
 //        swap(game.p[k], game.p[i]);
 //    }
 //}
 //void findWinningMove(TicTacToe &game){
 //    int n=game.n;
-//    for (int i=0; i<n; i++) {//n¸ö¿ÉÄÜµÄÊ×²½
+//    for (int i=0; i<n; i++) {//nä¸ªå¯èƒ½çš„é¦–æ­¥
 //        swap(game.p[0], game.p[i]);
-//        if (i>0&&!game.o.isWin()&&!game.draw) {//Ç°Ò»¾Öx±ØÓ®
+//        if (i>0&&!game.o.isWin()&&!game.draw) {//å‰ä¸€å±€xå¿…èµ¢
 //            game.forceWin=true;
 //            return;
-//        }else{//»òÊÇµÚÒ»¾Ö£¬»òÊÇÇ°Ò»¾Öx·Ç±ØÓ®
-//            game.reset();//ÖØÖÃ£¨x£¬oµÄ¸ñ¾Ö»Ö¸´³õÊ¼×´Ì¬£©
-//            game.oneTurn(0);//xÍæ¼Ò×ßµÚÒ»²½
-//            explore(game,1);//Ì½Ë÷ÏÂÒ»²½
-//            game.restore(0);//»Ö¸´¸÷Íæ¼Ò¸ñ¾Ö
+//        }else{//æˆ–æ˜¯ç¬¬ä¸€å±€ï¼Œæˆ–æ˜¯å‰ä¸€å±€xéå¿…èµ¢
+//            game.reset();//é‡ç½®ï¼ˆxï¼Œoçš„æ ¼å±€æ¢å¤åˆå§‹çŠ¶æ€ï¼‰
+//            game.oneTurn(0);//xç©å®¶èµ°ç¬¬ä¸€æ­¥
+//            explore(game,1);//æ¢ç´¢ä¸‹ä¸€æ­¥
+//            game.restore(0);//æ¢å¤å„ç©å®¶æ ¼å±€
 //            swap(game.p[0], game.p[i]);
 //        }
 //    }
 //}
-bool checkrow(int i, bitset<16> &targ){//¼ì²âtargËùÊ¾¸ñ¾ÖÊÇ·ñÔÚµÚiĞĞÓ®
+bool checkrow(int i, bitset<16> &targ){//æ£€æµ‹targæ‰€ç¤ºæ ¼å±€æ˜¯å¦åœ¨ç¬¬iè¡Œèµ¢
 	bitset<16> v(15<<(i*4));
     return v==(targ&v);
 }
-bool checkcol(int j, bitset<16> &targ){//¼ì²âtargËùÊ¾¸ñ¾ÖÊÇ·ñÔÚµÚjÁĞÓ®
+bool checkcol(int j, bitset<16> &targ){//æ£€æµ‹targæ‰€ç¤ºæ ¼å±€æ˜¯å¦åœ¨ç¬¬jåˆ—èµ¢
     bitset<16> v(4369<<j);
 	return v==(targ&v);
 }
-bool checkdiag(bitset<16> &targ){//¼ì²âtargËùÊ¾¸ñ¾ÖÊÇ·ñÔÚÖ÷¶Ô½ÇÏßÓ®
+bool checkdiag(bitset<16> &targ){//æ£€æµ‹targæ‰€ç¤ºæ ¼å±€æ˜¯å¦åœ¨ä¸»å¯¹è§’çº¿èµ¢
     bitset<16> v(33825);
     return v==(targ&v);
 }
-bool checkdiag1(bitset<16> &targ){//¼ì²âtargËùÊ¾¸ñ¾ÖÊÇ·ñÔÚ´Î¶Ô½ÇÏßÓ®
+bool checkdiag1(bitset<16> &targ){//æ£€æµ‹targæ‰€ç¤ºæ ¼å±€æ˜¯å¦åœ¨æ¬¡å¯¹è§’çº¿èµ¢
     bitset<16> v(4680);
     return v==(targ&v);
 }
-class Player{//Íæ¼ÒÀà
-    bool win;//Ó®±êÖ¾
-    bitset<16> pattern;//×Ô¼Ò¸ñ¾Ö
-    bitset<16> initp;//×Ô¼Ò³õÊ¼¸ñ¾Ö
-    void place(int i, int j);//ÔÚµÚiĞĞµÚjÁĞ´¦ÏÂ×Ó
-    void clear(int i, int j);//Çå³ıµÚiĞĞµÚjÁĞ´¦Æå×Ó
-    void reset();//ÓÃ×Ô¼Ò³õÊ¼¸ñ¾ÖÖØÖÃ
-    void reset(bitset<16> &p);//ÓÃ¸ñ¾Ö²ÎÊıÖØÖÃ
+class Player{//ç©å®¶ç±»
+    bool win;//èµ¢æ ‡å¿—
+    bitset<16> pattern;//è‡ªå®¶æ ¼å±€
+    bitset<16> initp;//è‡ªå®¶åˆå§‹æ ¼å±€
+    void place(int i, int j);//åœ¨ç¬¬iè¡Œç¬¬jåˆ—å¤„ä¸‹å­
+    void clear(int i, int j);//æ¸…é™¤ç¬¬iè¡Œç¬¬jåˆ—å¤„æ£‹å­
+    void reset();//ç”¨è‡ªå®¶åˆå§‹æ ¼å±€é‡ç½®
+    void reset(bitset<16> &p);//ç”¨æ ¼å±€å‚æ•°é‡ç½®
 public:
     Player(int p=0):win(false),initp(p),pattern(p){}
-    bool isWin(){return win;}//¼ì²âÓ®±êÖ¾
-    friend class TicTacToe;//Ì½Ë÷Ò»¾ÖÆå
+    bool isWin(){return win;}//æ£€æµ‹èµ¢æ ‡å¿—
+    friend class TicTacToe;//æ¢ç´¢ä¸€å±€æ£‹
 };
 void Player::place(int i, int j){
-	pattern.set(i*4+j);//ÉèÖÃ¸ñ¾Ö¶ÔÓ¦Î»Îª1
+	pattern.set(i*4+j);//è®¾ç½®æ ¼å±€å¯¹åº”ä½ä¸º1
     win=checkrow(i, pattern)||checkcol(j, pattern)||checkdiag(pattern)||checkdiag1(pattern);
 }
 void Player::clear(int i, int j){
-    pattern.reset(i*4+j);//Çå³ı¸ñ¾Ö¶ÔÓ¦Î»ÉÏµÄ1
+    pattern.reset(i*4+j);//æ¸…é™¤æ ¼å±€å¯¹åº”ä½ä¸Šçš„1
 }
 void Player::reset(){
     pattern=initp;
@@ -206,50 +206,50 @@ void Player::reset(bitset<16> &p){
     pattern=initp=p;
     win=false;
 }
-class TicTacToe {//Ò»×ÖÆåÀà
-    Player x, o;//Á½¸öÍæ¼Ò
-    vector<pair<int, int> > hole;//ÆåÅÌÖĞ¿ÉÏÂ×ÓµÄÆåÑÛ
-    vector<int> p;//ÏÂ×ÓË³Ğò
-    int n;//¿ÉÏÂ×ÓÊıÄ¿
-    bool draw;//Æ½¾Ö±êÖ¾
-    void oneTurn(int k);//µÚkÂÖ
-    void restore(int k);//»ØËİÇ°»Ö¸´¸ñ¾Ö
-    void reset();//ÖØÖÃ
+class TicTacToe {//ä¸€å­—æ£‹ç±»
+    Player x, o;//ä¸¤ä¸ªç©å®¶
+    vector<pair<int, int> > hole;//æ£‹ç›˜ä¸­å¯ä¸‹å­çš„æ£‹çœ¼
+    vector<int> p;//ä¸‹å­é¡ºåº
+    int n;//å¯ä¸‹å­æ•°ç›®
+    bool draw;//å¹³å±€æ ‡å¿—
+    void oneTurn(int k);//ç¬¬kè½®
+    void restore(int k);//å›æº¯å‰æ¢å¤æ ¼å±€
+    void reset();//é‡ç½®
     void explore(int k);
 public:
-    pair<int, int> winMove;//±ØÓ®Ê×²½
-    TicTacToe(vector<string> &a);//¹¹Ôìº¯Êı
-    friend bool findWinningMove(TicTacToe &game);//»ØËİËÑË÷±ØÓ®Ê×²½
+    pair<int, int> winMove;//å¿…èµ¢é¦–æ­¥
+    TicTacToe(vector<string> &a);//æ„é€ å‡½æ•°
+    friend bool findWinningMove(TicTacToe &game);//å›æº¯æœç´¢å¿…èµ¢é¦–æ­¥
 };
 TicTacToe::TicTacToe(vector<string> &a){
     bitset<16> xinit=0,oinit=0;
     n=0;
     for(int i=0,t=0;i<4;i++)
         for(int j=0;j<4;j++){
-            if(a[i][j]=='.'){//¼ÇÂ¼¿ÉÏÂ×ÓÆåÑÛ
+            if(a[i][j]=='.'){//è®°å½•å¯ä¸‹å­æ£‹çœ¼
                 hole.push_back(make_pair(i,j));
 				p.push_back(n++);
                 continue;
             }
             int k=i*4+j;
-            if(a[i][j]=='x')//¸ú×Ùx³õÊ¼¸ñ¾Ö
+            if(a[i][j]=='x')//è·Ÿè¸ªxåˆå§‹æ ¼å±€
                 xinit.set(k);
-            else//¸ú×Ùo³õÊ¼¸ñ¾Ö
+            else//è·Ÿè¸ªoåˆå§‹æ ¼å±€
                 oinit.set(k);
         }
-    x.reset(xinit);//³õÊ¼»¯xÍæ¼Ò
-    o.reset(oinit);//³õÊ¼»¯oÍæ¼Ò
-    draw=false;//³õÊ¼»¯¸÷±êÖ¾
-    winMove=hole[p[0]];//³õÊ¼»¯±ØÓ®Ê×²½
+    x.reset(xinit);//åˆå§‹åŒ–xç©å®¶
+    o.reset(oinit);//åˆå§‹åŒ–oç©å®¶
+    draw=false;//åˆå§‹åŒ–å„æ ‡å¿—
+    winMove=hole[p[0]];//åˆå§‹åŒ–å¿…èµ¢é¦–æ­¥
 }
-void TicTacToe::oneTurn(int k){//µÚkÂÖ
+void TicTacToe::oneTurn(int k){//ç¬¬kè½®
     int i=hole[p[k]].first,j=hole[p[k]].second;
-    if (k%2==0)//ÂÖµ½xÍæ¼Ò
+    if (k%2==0)//è½®åˆ°xç©å®¶
         x.place(i, j);
-    else//ÂÖµ½oÍæ¼Ò
+    else//è½®åˆ°oç©å®¶
         o.place(i, j);
 }
-void TicTacToe::restore(int k){//»Ö¸´µÚkÂÖÇ°¸ñ¾Ö
+void TicTacToe::restore(int k){//æ¢å¤ç¬¬kè½®å‰æ ¼å±€
     int i=hole[p[k]].first,j=hole[p[k]].second;
     if (k%2==0)
         x.clear(i, j);
@@ -264,36 +264,36 @@ void TicTacToe::reset(){
     winMove=hole[p[0]];
 }
 void TicTacToe::explore(int k){
-    if (o.isWin()){//ÉÏÒ»²½oÍæ¼ÒÓ®£¬ÍË³ö
+    if (o.isWin()){//ä¸Šä¸€æ­¥oç©å®¶èµ¢ï¼Œé€€å‡º
         return;
     }
-    if(x.isWin()){//ÉÏÒ»²½xÍæ¼ÒÓ®£¬×¼±¸xµÄÁíÒ»ÖÖ×ß·¨
+    if(x.isWin()){//ä¸Šä¸€æ­¥xç©å®¶èµ¢ï¼Œå‡†å¤‡xçš„å¦ä¸€ç§èµ°æ³•
         x.win=false;
         return;
     }
-    if((k>=n)&&!x.isWin()&&!o.isWin()){//³öÏÖÆ½¾Ö
+    if((k>=n)&&!x.isWin()&&!o.isWin()){//å‡ºç°å¹³å±€
         draw=true;
         return;
     }
-    for(int i=k;i<n;i++){//ÉÏÒ»²½Î´ÄÜ¾ö³öÊ¤¸º£¬×¼±¸½øÒ»²½Ì½Ë÷£¬¹²ÓĞn-k¸ö¿ÉÄÜµÄ×ß·¨
-        swap(p[k],p[i]);//¾ö¶¨ÏÂ×ÓµÄÆåÑÛ
-        oneTurn(k);//×ßÒ»²½
-        explore(k+1);//Ì½Ë÷ÏÂÒ»²½
-        restore(k);//»ØËİÇ°»Ö¸´¸ñ¾Ö
+    for(int i=k;i<n;i++){//ä¸Šä¸€æ­¥æœªèƒ½å†³å‡ºèƒœè´Ÿï¼Œå‡†å¤‡è¿›ä¸€æ­¥æ¢ç´¢ï¼Œå…±æœ‰n-kä¸ªå¯èƒ½çš„èµ°æ³•
+        swap(p[k],p[i]);//å†³å®šä¸‹å­çš„æ£‹çœ¼
+        oneTurn(k);//èµ°ä¸€æ­¥
+        explore(k+1);//æ¢ç´¢ä¸‹ä¸€æ­¥
+        restore(k);//å›æº¯å‰æ¢å¤æ ¼å±€
         swap(p[k], p[i]);
     }
 }
 bool findWinningMove(TicTacToe &game){
     int n=game.n;
-    for (int i=0; i<n; i++) {//n¸ö¿ÉÄÜµÄÊ×²½
+    for (int i=0; i<n; i++) {//nä¸ªå¯èƒ½çš„é¦–æ­¥
         swap(game.p[0], game.p[i]);
-        if (i>0&&!game.o.isWin()&&!game.draw) {//Ç°Ò»¾Öx±ØÓ®
+        if (i>0&&!game.o.isWin()&&!game.draw) {//å‰ä¸€å±€xå¿…èµ¢
             return true;
-        }else{//»òÊÇµÚÒ»¾Ö£¬»òÊÇÇ°Ò»¾Öx·Ç±ØÓ®
-            game.reset();//ÖØÖÃ£¨x£¬oµÄ¸ñ¾Ö»Ö¸´³õÊ¼×´Ì¬£©
-            game.oneTurn(0);//xÍæ¼Ò×ßµÚÒ»²½
-            game.explore(1);//Ì½Ë÷ÏÂÒ»²½
-            game.restore(0);//»Ö¸´¸÷Íæ¼Ò¸ñ¾Ö
+        }else{//æˆ–æ˜¯ç¬¬ä¸€å±€ï¼Œæˆ–æ˜¯å‰ä¸€å±€xéå¿…èµ¢
+            game.reset();//é‡ç½®ï¼ˆxï¼Œoçš„æ ¼å±€æ¢å¤åˆå§‹çŠ¶æ€ï¼‰
+            game.oneTurn(0);//xç©å®¶èµ°ç¬¬ä¸€æ­¥
+            game.explore(1);//æ¢ç´¢ä¸‹ä¸€æ­¥
+            game.restore(0);//æ¢å¤å„ç©å®¶æ ¼å±€
             swap(game.p[0], game.p[i]);
         }
     }
@@ -308,10 +308,10 @@ int main(){
     while(ch!='$'){
         string  s;
 		vector<string> a(4);
-        for(int i=0;i<4;i++)//¶ÁÈ¡°¸Àı³õÊ¼Æå¾Ö
+        for(int i=0;i<4;i++)//è¯»å–æ¡ˆä¾‹åˆå§‹æ£‹å±€
             inputdata>>a[i];
-        TicTacToe game(a);//´´½¨Æå¾Ö
-        if (findWinningMove(game)) {//¼ÆËãx±ØÓ®Ê×²½
+        TicTacToe game(a);//åˆ›å»ºæ£‹å±€
+        if (findWinningMove(game)) {//è®¡ç®—xå¿…èµ¢é¦–æ­¥
             outputdata<<"("<<game.winMove.first<<","<<game.winMove.second<<")"<<endl;
             cout<<"("<<game.winMove.first<<","<<game.winMove.second<<")"<<endl;
         }else{

@@ -1,4 +1,4 @@
-﻿//
+//
 //  Eventually periodic sequence.cpp
 //  laboratory
 //

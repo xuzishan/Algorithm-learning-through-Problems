@@ -2,8 +2,8 @@
 //  Network Attack.cpp.cpp
 //  laboratory
 //
-//  Created by Ğì×ÓÉº on 16/3/5.
-//  Copyright (c) 2016Äê xu_zishan. All rights reserved.
+//  Created by å¾å­çŠ on 16/3/5.
+//  Copyright (c) 2016å¹´ xu_zishan. All rights reserved.
 //
 #include <iostream>
 #include <fstream>

@@ -2,8 +2,8 @@
 //  Machine Schedule.cpp
 //  laboratory
 //
-//  Created by Ğì×ÓÉº on 15/9/5.
-//  Copyright (c) 2015Äê xu_zishan. All rights reserved.
+//  Created by å¾å­çŠ on 15/9/5.
+//  Copyright (c) 2015å¹´ xu_zishan. All rights reserved.
 //
 
 #include <iostream>
@@ -23,29 +23,29 @@ public:
 };
 int machineSchedule(int n, int m, vector<int> &i, vector<int> &x, vector<int> &y) {
     vector<set<int>> mode(n+m, set<int>());
-    set<int> jobs;//Î´´¦ÀíÈÎÎñ¼¯ºÏ
+    set<int> jobs;//æœªå¤„ç†ä»»åŠ¡é›†åˆ
 	int k=x.size();
     for (int j=0; j<k; j++) {
-        mode[x[j]].insert(i[j]);//¼ÇÂ¼ÈÎÎñiµÄA»ú¹¤×÷Ä£Ê½
-        mode[n+y[j]].insert(i[j]);//¼ÇÂ¼ÈÎÎñiµÄB»ú¹¤×÷Ä£Ê½
+        mode[x[j]].insert(i[j]);//è®°å½•ä»»åŠ¡içš„Aæœºå·¥ä½œæ¨¡å¼
+        mode[n+y[j]].insert(i[j]);//è®°å½•ä»»åŠ¡içš„Bæœºå·¥ä½œæ¨¡å¼
         jobs.insert(j);
     }
-	set<int> r=mode[0].size()>mode[n+m-1].size()? mode[0]:mode[n+m-1];//Ê×´Î¿ª»úÒª´¦ÀíµÄÈÎÎñ
-    int num=0;//»úÆ÷ÖØÆô´ÎÊı
-    while (!jobs.empty()) {//»¹ÓĞÎ´´¦ÀíÈÎÎñ
+	set<int> r=mode[0].size()>mode[n+m-1].size()? mode[0]:mode[n+m-1];//é¦–æ¬¡å¼€æœºè¦å¤„ç†çš„ä»»åŠ¡
+    int num=0;//æœºå™¨é‡å¯æ¬¡æ•°
+    while (!jobs.empty()) {//è¿˜æœ‰æœªå¤„ç†ä»»åŠ¡
         num++;
 		int* temp=new int[jobs.size()];
-		int* p=set_difference(jobs.begin(), jobs.end(), r.begin(), r.end(), temp);//´¦Àí±¾´ÎÈÎÎñ
+		int* p=set_difference(jobs.begin(), jobs.end(), r.begin(), r.end(), temp);//å¤„ç†æœ¬æ¬¡ä»»åŠ¡
 		jobs=set<int>(temp, p);
 		delete []temp;
-        for (int j=0; j<n+m; j++) {//µ÷Õû¸÷Ä£Ê½¿É½ÓÊÜµÄÈÎÎñ
+        for (int j=0; j<n+m; j++) {//è°ƒæ•´å„æ¨¡å¼å¯æ¥å—çš„ä»»åŠ¡
 			temp=new int[mode[j].size()];
 			p=set_difference(mode[j].begin(), mode[j].end(),r.begin(), r.end(), temp);
 			mode[j]=set<int>(temp, p);
 			delete []temp;
         }
-		int j=distance(mode.begin(), max_element(mode.begin(), mode.end(),Comp()));//¿É´¦Àí×î¶àÈÎÎñµÄÄ£Ê½
-        r=mode[j];//ÏÂ´Î´¦ÀíµÄÈÎÎñ
+		int j=distance(mode.begin(), max_element(mode.begin(), mode.end(),Comp()));//å¯å¤„ç†æœ€å¤šä»»åŠ¡çš„æ¨¡å¼
+        r=mode[j];//ä¸‹æ¬¡å¤„ç†çš„ä»»åŠ¡
     }
     return num;
 }

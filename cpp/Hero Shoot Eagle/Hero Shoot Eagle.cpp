@@ -1,4 +1,4 @@
-﻿//
+//
 //  Hero Shoot Eagle.cpp
 //  laboratory
 //

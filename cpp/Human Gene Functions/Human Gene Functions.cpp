@@ -1,4 +1,4 @@
-﻿//
+//
 //  Human Gene Functions.cpp
 //  laboratory
 //

@@ -2,8 +2,8 @@
 //  Cow Solitaire.cpp
 //  laboratory
 //
-//  Created by Ğì×ÓÉº on 15/3/19.
-//  Copyright (c) 2015Äê xu_zishan. All rights reserved.
+//  Created by å¾å­çŠ on 15/3/19.
+//  Copyright (c) 2015å¹´ xu_zishan. All rights reserved.
 //
 #include <iostream>
 #include <fstream>
@@ -28,30 +28,30 @@ public:
 	void cowSolitaire(int k);
 };
 void Solitaire::cowSolitaire(int k){
-    if (k>=2*n-1) {//×ßµ½ÓÒÉÏ½Ç
+    if (k>=2*n-1) {//èµ°åˆ°å³ä¸Šè§’
         if (currentValue>value)
             value=currentValue;
         return;
     }
-    if (i==0) {//¶¥²ãÖ»ÄÜÏòÓÒ×ß
+    if (i==0) {//é¡¶å±‚åªèƒ½å‘å³èµ°
         j++;
         currentValue+=A[i][j];
         cowSolitaire(k+1);
         currentValue-=A[i][j];
         j--;
-    }else if (j==n-1) {//ÓÒ±ßÔµÖ»ÄÜÏòÉÏ×ß
+    }else if (j==n-1) {//å³è¾¹ç¼˜åªèƒ½å‘ä¸Šèµ°
         i--;
         currentValue+=A[i][j];
         cowSolitaire(k+1);
         currentValue-=A[i][j];
         i++;
     }else{
-        j++; //ÏòÓÒ×ß
+        j++; //å‘å³èµ°
         currentValue+=A[i][j];
         cowSolitaire(k+1);
         currentValue-=A[i][j];
         j--;
-        i--; //ÏòÉÏ×ß
+        i--; //å‘ä¸Šèµ°
         currentValue+=A[i][j];
         cowSolitaire(k+1);
         currentValue-=A[i][j];

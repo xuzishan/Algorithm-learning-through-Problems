@@ -1,4 +1,4 @@
-﻿//
+//
 //  Boolean Logic.cpp
 //  laboratory
 //

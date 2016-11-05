@@ -2,8 +2,8 @@
 //  Pages Cluster.cpp
 //  laboratory
 //
-//  Created by Ğì×ÓÉº on 14/10/28.
-//  Copyright (c) 2014Äê xu_zishan. All rights reserved.
+//  Created by å¾å­çŠ on 14/10/28.
+//  Copyright (c) 2014å¹´ xu_zishan. All rights reserved.
 //
 #include <iostream>
 #include <fstream>
@@ -40,7 +40,7 @@ vector<double> mstPrim(vector<vector<double>> &w, int r){
         Q.pop();
         poped[u]=true;
         for (int v=0; v<n; v++)
-            if (!poped[v])//ÈôvÔÚ¶ÓÁĞQ
+            if (!poped[v])//è‹¥våœ¨é˜Ÿåˆ—Q
                 if (w[u][v] != 0)
                     if (w[u][v]<key[v]) {//w(u,v)<key[v]
                         pi[v]=u;

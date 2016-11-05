@@ -2,8 +2,8 @@
 //  Bronze Cow Party.cpp
 //  laboratory
 //
-//  Created by Ğì×ÓÉº on 14/10/28.
-//  Copyright (c) 2014Äê xu_zishan. All rights reserved.
+//  Created by å¾å­çŠ on 14/10/28.
+//  Copyright (c) 2014å¹´ xu_zishan. All rights reserved.
 //
 #include <iostream>
 #include <fstream>
