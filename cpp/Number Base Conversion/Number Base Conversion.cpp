@@ -1,4 +1,4 @@
-﻿//
+//
 //  Number Base Conversion.cpp
 //  laboratory
 //

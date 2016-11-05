@@ -2,8 +2,8 @@
 //  Orders.cpp
 //  Algorithms
 //
-//  Created by Ğì×ÓÉº on 13-7-7.
-//  Copyright (c) 2013Äê Ğì×ÓÉº. All rights reserved.
+//  Created by å¾å­çŠ on 13-7-7.
+//  Copyright (c) 2013å¹´ å¾å­çŠ. All rights reserved.
 //
 #include <fstream>
 #include <string>

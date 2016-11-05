@@ -1,4 +1,4 @@
-﻿//
+//
 //  DNA Sorting.cpp
 //  laboratory
 //

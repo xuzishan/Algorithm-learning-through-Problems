@@ -1,4 +1,4 @@
-﻿//
+//
 //  Division.cpp
 //  laboratory
 //

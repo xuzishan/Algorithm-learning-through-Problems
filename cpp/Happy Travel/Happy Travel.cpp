@@ -1,4 +1,4 @@
-﻿//
+//
 //  Happy Travel.cpp
 //  laboratory
 //

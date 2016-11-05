@@ -1,4 +1,4 @@
-﻿//
+//
 //  Crazy Search.cpp
 //  laboratory
 //

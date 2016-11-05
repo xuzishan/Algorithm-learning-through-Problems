@@ -1,4 +1,4 @@
-﻿//
+//
 //  Rectilinear polygon.cpp
 //  laboratory
 //

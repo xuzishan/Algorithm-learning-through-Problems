@@ -1,4 +1,4 @@
-﻿//
+//
 //  The Best Farm.cpp
 //  laboratory
 //

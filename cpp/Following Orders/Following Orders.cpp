@@ -2,8 +2,8 @@
 //  Following Orders.cpp
 //  laboratory
 //
-//  Created by Ğì×ÓÉº on 16/2/27.
-//  Copyright (c) 2016Äê xu_zishan. All rights reserved.
+//  Created by å¾å­çŠ on 16/2/27.
+//  Copyright (c) 2016å¹´ xu_zishan. All rights reserved.
 //
 #include <iostream>
 #include <fstream>
@@ -59,7 +59,7 @@ public:
                     after[x]++;
                 }
             }
-            constraints.push_back(make_pair(x, y));//(x, y)×÷ÎªÒ»ÌõÓĞÏò±ß
+            constraints.push_back(make_pair(x, y));//(x, y)ä½œä¸ºä¸€æ¡æœ‰å‘è¾¹
         }
         for (int i=0; i<n; i++) {
             for (int j=befor[i]; j<n-after[i]; j++)

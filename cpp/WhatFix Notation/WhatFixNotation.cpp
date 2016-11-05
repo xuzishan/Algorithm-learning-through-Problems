@@ -2,8 +2,8 @@
 //  WhatFixNotation.cpp
 //  laboratory
 //
-//  Created by Ğì×ÓÉº on 15/3/11.
-//  Copyright (c) 2015Äê xu_zishan. All rights reserved.
+//  Created by å¾å­çŠ on 15/3/11.
+//  Copyright (c) 2015å¹´ xu_zishan. All rights reserved.
 //
 #include <iostream>
 #include <fstream>

@@ -1,4 +1,4 @@
-﻿//
+//
 //  Another Eight Puzzle.cpp
 //  laboratory
 //

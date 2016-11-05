@@ -1,4 +1,4 @@
-﻿//
+//
 //  integer.cpp
 //  laboratory
 //
